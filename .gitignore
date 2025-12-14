@@ -1,160 +1,20 @@
-# ==============================================================================
-# 核心原则：先禁用所有默认规则，再通过「递归+精准匹配」覆盖所有构建/外部库场景
-# 注意：此文件必须放在仓库根目录（与 .git 文件夹同级），编码为 UTF-8 无 BOM
-# ==============================================================================
-
-# ------------------------------ 操作系统/编辑器临时文件（基础兜底） ------------------------------
-# 避免临时文件干扰规则验证
-*~
-\#*#
-*.swp
-*.swo
-.DS_Store
-Thumbs.db
-desktop.ini
-*.tmp
-*.log
-*.cache
-.Trashes/
-ehthumbs.db
-Icon?
-._*
-
-# 编辑器配置（全量排除，如需保留个别文件可单独放行）
-.idea/
-.vscode/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-*.vcxproj.user
-*.xcodeproj/
-*.xcworkspace/
-*.sublime-*
-.project
-.classpath
-.settings/
-
-# ------------------------------ 构建文件：递归匹配所有层级（绝对过滤） ------------------------------
-# 1. 通用构建目录（无论在仓库哪个子目录，全部排除）
-**/build/
+# 精准匹配所有层级的 build_ninja（单下划线！）
 **/build_ninja/
-**/cmake-build-*/
-**/out/
-**/bin/
-**/obj/
-**/release/
-**/debug/
-**/dist/
-**/target/
-**/build-*/
-**/cmake_build/
-**/meson-build/
-**/ninja-build/
-**/bazel-*/
-**/make-build/
-
-# 2. 编译产物（全后缀、全路径匹配）
-**/*.exe
-**/*.exe~
-**/*.dll
-**/*.so
-**/*.so.*
-**/*.dylib
-**/*.a
-**/*.lib
-**/*.o
-**/*.obj
-**/*.lo
-**/*.la
-**/*.pdb
-**/*.ilk
-**/*.pch
-**/*.ipch
-**/*.ncb
-**/*.idb
-**/*.msi
-**/*.msp
-**/*.mst
-
-# 3. 构建工具产物（CMake/Make/Ninja 等）
-**/CMakeCache.txt
-**/CMakeFiles/
-**/CMakeScripts/
-**/Testing/
-**/Makefile
-**/cmake_install.cmake
-**/install_manifest.txt
-**/compile_commands.json
-**/CTestTestfile.cmake
-**/_deps/
-**/.ninja_log
-**/.ninja_deps
-**/rules.ninja
-**/build.ninja
-**/CMakeUserPresets.json
-**/CTestConfig.cmake
-
-# ------------------------------ 外部库：递归匹配所有层级（绝对过滤） ------------------------------
-# 1. 通用第三方库目录（无论在哪个子目录，全部排除）
+# 过滤所有外部库目录
 **/lib/
-**/libs/
 **/third_party/
 **/external/
-**/vendor/
-**/deps/
-**/dependencies/
-**/plugins/
-**/extensions/
-
-# 2. 常见外部库精准排除（兜底，避免漏网）
-**/googletest/
-**/gtest/
-**/gmock/
-**/boost/
-**/opencv/
-**/protobuf/
-**/grpc/
-**/fmt/
-**/spdlog/
-**/eigen/
-**/nlohmann/
-**/poco/
-**/qt/
-**/wxWidgets/
-**/zlib/
-**/curl/
-**/openssl/
-
-# 3. 包管理工具依赖（绝对排除，避免提交下载的库）
-**/vcpkg_installed/
-**/.conan/
-**/conan.lock
-**/conanbuildinfo.txt
-**/__pycache__/
-**/*.egg-info/
-**/venv/
-**/env/
-**/node_modules/
-**/bower_components/
-**/carthage/
-**/Pods/
-
-# ------------------------------ 兜底规则：防止漏网之鱼 ------------------------------
-# 匹配所有以「-build」「_build」「.build」结尾的目录
-**/*-build/
-**/*_build/
-**/*.build/
-
-# 匹配所有包含「lib」「third」「external」的目录（不区分前缀后缀）
-**/*lib*/
-**/*third*/
-**/*external*/
-
-# ==============================================================================
-# 【可选】如需保留个别文件/目录，按以下格式放行（必须写在排除规则之后）
-# 示例：保留 lib 目录下的自定义配置文件（仅放行该文件，其余仍排除）
-# !**/lib/custom_config.h
-# 示例：保留根目录的 bin 目录下的脚本文件（仅放行脚本，其余仍排除）
-# !bin/run.sh
-# ==============================================================================
+# 过滤其他构建产物
+**/build/
+**/cmake-build-*/
+**/bin/
+**/obj/
+**/*.exe
+**/*.o
+**/.ninja_log
+**/CMakeFiles/
+# 系统临时文件
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
