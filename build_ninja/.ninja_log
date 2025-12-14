@@ -1,0 +1,19 @@
+# ninja log v7
+27	290	7874304932406410	MergeSort/src/CMakeFiles/merge_sort_lib.dir/orig_1d_arr.cpp.obj	d661e67881276a0a
+91	718	7874304933072771	Journey/CMakeFiles/Journey.dir/menu_items.cpp.obj	1a52976ecab1adb7
+21	990	7874304932349533	MergeSort/src/CMakeFiles/merge_sort_lib.dir/MergeSort.cpp.obj	5158591ae746772d
+35	1002	7874304932520459	MergeSort/src/CMakeFiles/merge_sort_lib.dir/io.cpp.obj	5bbf071e627153e5
+61	1022	7874304932770382	Journey/CMakeFiles/Journey.dir/main.cpp.obj	4e0f7a962fb16d60
+71	1115	7874304932921840	Journey/CMakeFiles/Journey.dir/menu_functions.cpp.obj	e6c836d1f893d7a2
+1012	1213	7874304942247402	MergeSort/src/libmerge_sort_lib.a	4db6f1eaae921d5e
+1115	1305	7874304943287660	Journey/Journey.exe	e820e892fd339ea3
+52	2033	7874304932652317	lib/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	d8919e0bda094f3e
+56	2261	7874304932701538	MergeSort/CMakeFiles/merge_sort_test.dir/test/test_merge.cpp.obj	5d910b71b2362d4d
+47	2276	7874304932611305	lib/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj	188f5d2bb746fa9e
+14	3675	7874304932287333	lib/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj	ff6cee84a8e2e01e
+3	7915	7874304932164231	lib/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	4c0950e29e8115ce
+7933	8240	7874305011510610	lib/libgtest.a	a27adda74f22f9c7
+8241	8483	7874305014546838	lib/libgmock.a	f6048c296a8b1931
+8252	8495	7874305014650810	lib/libgtest_main.a	59800fbf8d1110e4
+8262	8607	7874305014774970	MergeSort/merge_sort_test.exe	eb9733d1eeacaa02
+8483	8614	7874305016957291	lib/libgmock_main.a	7eedb3c10b6fd9e4
