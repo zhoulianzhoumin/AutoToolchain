@@ -52,9 +52,13 @@ if %errorlevel% equ 0 (
     if exist "..\%SOURCE_FOLDER%\MergeSort\merge_sort.bat" (
         copy "..\%SOURCE_FOLDER%\MergeSort\merge_sort.bat" ".\MergeSort\"
         echo 文件复制成功！
-    ) else (
-        echo 警告：找不到要复制的文件
-    )
+	)
+	if exist "..\%SOURCE_FOLDER%\Journey\*.bat" (
+        if not exist ".\Journey\" mkdir ".\Journey\"
+        copy "..\%SOURCE_FOLDER%\Journey\*.bat" ".\Journey\"
+        echo 复制: Journey 批处理文件
+    )   
+    echo 文件复制完成！
 ) else (
     echo CMake配置失败！
 )
