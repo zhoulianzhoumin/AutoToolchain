@@ -1,3 +1,41 @@
-# git忽略模式
+# ===================== 通用构建文件过滤 =====================
+# CMake 构建目录（你的 ninja 构建文件夹）
+build_ninja/
+# CMake 自动生成的临时文件
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+# Ninja 构建文件
+*.ninja
+ninja_log
+# 编译产物
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.exe
+*.out
+*.pdb
+*.ilk
+*.dSYM/
 
-build_*/
+# ===================== 外部库过滤（修正核心） =====================
+# 强制过滤 lib 下所有外部库（优先级最高）
+/lib/
+# 若需要保留 lib 目录下的部分文件（如 lib/README.md），可反向保留：
+# !/lib/README.md
+
+# ===================== 系统/编辑器临时文件 =====================
+# Windows 系统文件
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak
+*.swp
